@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import type { Request, Response } from 'express';
-import { redisClient } from '../index';
-import PricingAgent from '../agents/pricingEngine';
-import ProcurementAgent from '../agents/procurementAgent';
+import { redisClient } from '../index.js';
+import PricingAgent from '../agents/pricingEngine.js';
+import ProcurementAgent from '../agents/procurementAgent.js';
 
 const router = Router();
 const pricingAgent = new PricingAgent();

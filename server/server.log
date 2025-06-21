@@ -1,0 +1,36 @@
+Orchestrator running on port 3001
+[ERROR] Failed to parse LLM response: Error: LLM response is not an array
+    at ProcurementAgent.execute (file:///workspace/automated-dropshipping/server/dist/agents/procurementAgent.js:42:27)
+[ERROR] Procurement failed: Error: Invalid product recommendations format
+    at ProcurementAgent.execute (file:///workspace/automated-dropshipping/server/dist/agents/procurementAgent.js:47:23)
+2025-06-21 16:14:52 [error]: Error: Missing credentials for "PLAIN"
+    at SMTPConnection._formatError (/workspace/automated-dropshipping/server/node_modules/nodemailer/lib/smtp-connection/index.js:809:19)
+    at SMTPConnection.login (/workspace/automated-dropshipping/server/node_modules/nodemailer/lib/smtp-connection/index.js:454:38)
+    at /workspace/automated-dropshipping/server/node_modules/nodemailer/lib/smtp-transport/index.js:272:32
+    at SMTPConnection.<anonymous> (/workspace/automated-dropshipping/server/node_modules/nodemailer/lib/smtp-connection/index.js:215:17)
+    at Object.onceWrapper (node:events:632:28)
+    at SMTPConnection.emit (node:events:518:28)
+    at SMTPConnection._actionEHLO (/workspace/automated-dropshipping/server/node_modules/nodemailer/lib/smtp-connection/index.js:1371:14)
+    at SMTPConnection._processResponse (/workspace/automated-dropshipping/server/node_modules/nodemailer/lib/smtp-connection/index.js:993:20)
+    at SMTPConnection._onData (/workspace/automated-dropshipping/server/node_modules/nodemailer/lib/smtp-connection/index.js:774:14)
+    at SMTPConnection._onSocketData (/workspace/automated-dropshipping/server/node_modules/nodemailer/lib/smtp-connection/index.js:195:44)
+node:internal/process/promises:394
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: Missing credentials for "PLAIN"
+    at SMTPConnection._formatError (/workspace/automated-dropshipping/server/node_modules/nodemailer/lib/smtp-connection/index.js:809:19)
+    at SMTPConnection.login (/workspace/automated-dropshipping/server/node_modules/nodemailer/lib/smtp-connection/index.js:454:38)
+    at /workspace/automated-dropshipping/server/node_modules/nodemailer/lib/smtp-transport/index.js:272:32
+    at SMTPConnection.<anonymous> (/workspace/automated-dropshipping/server/node_modules/nodemailer/lib/smtp-connection/index.js:215:17)
+    at Object.onceWrapper (node:events:632:28)
+    at SMTPConnection.emit (node:events:518:28)
+    at SMTPConnection._actionEHLO (/workspace/automated-dropshipping/server/node_modules/nodemailer/lib/smtp-connection/index.js:1371:14)
+    at SMTPConnection._processResponse (/workspace/automated-dropshipping/server/node_modules/nodemailer/lib/smtp-connection/index.js:993:20)
+    at SMTPConnection._onData (/workspace/automated-dropshipping/server/node_modules/nodemailer/lib/smtp-connection/index.js:774:14)
+    at SMTPConnection._onSocketData (/workspace/automated-dropshipping/server/node_modules/nodemailer/lib/smtp-connection/index.js:195:44) {
+  code: 'EAUTH',
+  command: 'API'
+}
+
+Node.js v22.16.0

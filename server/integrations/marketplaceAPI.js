@@ -1,4 +1,45 @@
-const { AmazonSPAPI, AlibabaOpenAPI } = require('marketplace-sdk');
+// Stub implementation
+class AmazonSPAPI {
+  constructor(config) {
+    // Accept but ignore config
+  }
+  
+  async getProduct(productId) {
+    return {
+      id: productId,
+      price: 99.99,
+      inventory: 100
+    };
+  }
+
+  async getPrice(productId) {
+    return 99.99;
+  }
+}
+
+class AlibabaOpenAPI {
+  constructor(config) {
+    // Accept but ignore config
+  }
+  
+  async productDetails(productId) {
+    return {
+      id: productId,
+      price: 49.99,
+      minOrderQuantity: 10
+    };
+  }
+
+  async getPrice(productId) {
+    return 49.99;
+  }
+
+  async getCost(productId) {
+    return 29.99;
+  }
+}
+
+module.exports = { AmazonSPAPI, AlibabaOpenAPI };
 
 class UnifiedAPI {
   constructor() {

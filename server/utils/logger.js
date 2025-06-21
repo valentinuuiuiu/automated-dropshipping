@@ -1,4 +1,4 @@
-const { createLogger, format, transports } = require('winston');
+import { createLogger, format, transports } from 'winston';
 const { combine, timestamp, printf } = format;
 
 const logFormat = printf(({ level, message, timestamp, stack }) => {
@@ -33,4 +33,4 @@ function createEventLogger() {
   };
 }
 
-module.exports = { logger, createEventLogger };
+export { logger, createEventLogger };

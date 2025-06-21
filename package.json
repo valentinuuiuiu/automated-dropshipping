@@ -7,5 +7,14 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "drei": "^2.2.21",
+    "express": "^5.1.0",
+    "framer-motion": "^12.18.1",
+    "mongoose": "^8.16.0",
+    "react-three-fiber": "^6.0.13",
+    "websocket": "^1.0.35"
   }
 }

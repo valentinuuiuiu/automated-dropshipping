@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import type { Request, Response } from 'express';
-import { redisClient } from '../index';
+import { redisClient } from '../index.js';
 
 const router = Router();
 

@@ -3,8 +3,8 @@ import express from 'express';
 import type { Request, Response } from 'express';
 import { WebSocketServer } from 'ws';
 import { createClient } from 'redis';
-import ProcurementAgent from './agents/procurementAgent';
-import PricingAgent from './agents/pricingEngine';
+import ProcurementAgent from './agents/procurementAgent.js';
+import PricingAgent from './agents/pricingEngine.js';
 
 dotenv.config();
 
@@ -23,7 +23,7 @@ export const redisClient = createClient({
 });
 
 redisClient.on('error', (err) => console.error('Redis Client Error', err));
-await redisClient.connect();
+(async () => { await redisClient.connect(); })();
 
 const broadcast = (data: BroadcastData): void => {
   wss.clients.forEach(client => client.send(JSON.stringify(data)));
@@ -41,9 +41,9 @@ setInterval(() => {
 }, 300000);
 
 // API Endpoints
-import agentsRouter from './routes/agents';
-import productsRouter from './routes/products';
-import emailRouter from './routes/email';
+import agentsRouter from './routes/agents.js';
+import productsRouter from './routes/products.js';
+import emailRouter from './routes/email.js';
 
 app.use('/api/agents', agentsRouter);
 app.use('/api/products', productsRouter);
