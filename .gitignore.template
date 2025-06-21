@@ -1,0 +1,99 @@
+
+
+# ============================================
+# AUTOMATED DROPSHIPPING GIT IGNORE RULES
+# ============================================
+
+# --- Environment Files ---
+.env
+.env.local
+!.env.template
+.env*.backup
+
+# --- Development Environments ---
+.venv/
+venv/
+env/
+ENV/
+virtualenv/
+pythonenv/
+
+# --- Python Specific ---
+__pycache__/
+*.py[cod]
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# --- Logs and Databases ---
+*.log
+logs/
+*.sqlite3
+*.db
+*.dump
+
+# --- IDE Configurations ---
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# --- System Files ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# --- Testing ---
+.coverage
+htmlcov/
+.pytest_cache/
+test-results.xml
+
+# --- Build Artifacts ---
+build/
+dist/
+out/
+target/
+*.min.js
+*.min.css
+
+# --- Documentation ---
+docs/_build/
+site/
+
+# --- Project Specific ---
+/server.log
+/frontend.log
+/coverage/
+/tmp/
+/media/
+/staticfiles/
+
+# --- Security ---
+*.key
+*.pem
+*.cert
+*.pub
+secrets.yml
+credentials.json
+
