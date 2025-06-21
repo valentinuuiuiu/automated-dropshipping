@@ -1,6 +1,5 @@
-const nodemailer = require('nodemailer');
-const { logger } = require('../utils/logger');
-const { createEventLogger } = require('../utils/logger');
+import nodemailer from 'nodemailer';
+import { logger, createEventLogger } from '../utils/logger.js';
 
 class EmailManager {
   constructor() {
@@ -90,4 +89,4 @@ class EmailManager {
   }
 }
 
-module.exports = EmailManager;
+export default EmailManager;

@@ -1,6 +1,6 @@
-const { DeepseekLLM } = require('deepseek-sdk');
-const MarketplaceAPI = require('../integrations/marketplaceAPI');
-const logger = require('../utils/logger');
+import { DeepseekLLM } from './deepseek-stub.js';
+import MarketplaceAPI from '../integrations/marketplace-stub.js';
+import { logger } from '../utils/logger-stub.js';
 
 class PricingAgent {
   constructor() {
@@ -69,4 +69,4 @@ Generate JSON with:
   }
 }
 
-module.exports = PricingAgent;
+export default PricingAgent;

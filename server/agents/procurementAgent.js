@@ -1,15 +1,15 @@
-const { DeepseekLLM } = require('deepseek-sdk');
-const { analyzeMarketTrends } = require('./marketAnalysis');
-const UnifiedAPI = require('../integrations/marketplaceAPI');
-const EmailManager = require('../integrations/emailService');
-const { logger } = require('../utils/logger');
+import { DeepseekLLM } from './deepseek-stub.js';
+const analyzeMarketTrends = async () => ({ trends: [] });
+import UnifiedAPI from '../integrations/marketplace-stub.js';
+import EmailManager from '../integrations/emailService.js';
+import { logger } from '../utils/logger-stub.js';
 
 class ProcurementAgent {
   constructor() {
     this.llm = new DeepseekLLM(process.env.DEEPSEEK_API_KEY);
     this.marketplace = new UnifiedAPI();
     this.emailService = new EmailManager();
-    this.logger = logger.child({ module: 'ProcurementAgent' });
+    this.logger = logger; // Simplified for stub implementation
     this.rateLimit = 100; // API calls per minute
     this.lastCallTime = Date.now();
   }
@@ -93,4 +93,4 @@ class ProcurementAgent {
   }
 }
 
-module.exports = ProcurementAgent;
+export default ProcurementAgent;
