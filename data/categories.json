@@ -1,0 +1,50 @@
+
+{
+  "categorii": [
+    {
+      "id": "electronice",
+      "nume": "Electronice & Electrocasnice",
+      "subcategorii": [
+        {"id": "telefoane", "nume": "Telefoane"},
+        {"id": "tv", "nume": "TV, Audio-Video & Foto"},
+        {"id": "electrocasnice", "nume": "Electrocasnice"}
+      ]
+    },
+    {
+      "id": "calculatoare",
+      "nume": "Calculatoare & Birou",
+      "subcategorii": [
+        {"id": "laptopuri", "nume": "Laptopuri"},
+        {"id": "componente", "nume": "Componente PC"},
+        {"id": "software", "nume": "Software"}
+      ]
+    },
+    {
+      "id": "fashion",
+      "nume": "Fashion",
+      "subcategorii": [
+        {"id": "barbati", "nume": "Moda Barbati"},
+        {"id": "femei", "nume": "Moda Femei"},
+        {"id": "accesorii", "nume": "Accesorii"}
+      ]
+    },
+    {
+      "id": "casa",
+      "nume": "Casa & Gradina",
+      "subcategorii": [
+        {"id": "mobila", "nume": "Mobila"},
+        {"id": "decoratiuni", "nume": "Decoratiuni"},
+        {"id": "scule", "nume": "Scule & Utile"}
+      ]
+    },
+    {
+      "id": "sport",
+      "nume": "Sport & Activitati in Aer Liber",
+      "subcategorii": [
+        {"id": "fitness", "nume": "Fitness"},
+        {"id": "biciclete", "nume": "Biciclete"},
+        {"id": "echipamente", "nume": "Echipamente Sportive"}
+      ]
+    }
+  ]
+}
