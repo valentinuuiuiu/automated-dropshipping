@@ -1,0 +1,169 @@
+
+{
+  "categorii": [
+    {
+      "id": 1,
+      "nume": "Imobiliare",
+      "ads": [
+        {
+          "text": "⏳ Oferta limitată! Apartament central cu 10% reducere",
+          "premium": true,
+          "creditsRequired": 3,
+          "imagine": "/assets/ads/imobiliare-banner.jpg"
+        },
+        {
+          "text": "🏡 Casă la țară - 50% reducere",
+          "premium": false,
+          "imagine": "/assets/ads/casa-tara.jpg"
+        },
+        {
+          "text": "🏢 Spațiu comercial - Zona centrală",
+          "premium": true,
+          "creditsRequired": 4,
+          "imagine": "/assets/ads/spatiu-comercial.jpg"
+        }
+      ],
+      "subcategorii": [
+        {
+          "id": 101,
+          "nume": "Apartamente de vânzare",
+          "ads": [
+            {
+              "text": "✨ Lux - Apartament de vis în centru",
+              "premium": true,
+              "creditsRequired": 2,
+              "imagine": "/assets/ads/apartament-lux.jpg"
+            },
+            {
+              "text": "🏘️ Apartament renovat - Cartier liniștit",
+              "premium": false,
+              "imagine": "/assets/ads/apartament-renovat.jpg"
+            }
+          ],
+          "products": [
+            {
+              "id": 1011,
+              "nume": "Apartament 2 camere centru",
+              "pret": 120000,
+              "imagine": "/assets/products/apartament-2cam.jpg",
+              "requiresCredits": 5,
+              "contactCredits": 2
+            }
+          ]
+        },
+        {
+          "id": 102,
+          "nume": "Case de vânzare",
+          "ads": [
+            {
+              "text": "🏰 Vila cu piscină - București Nord",
+              "premium": true,
+              "creditsRequired": 5,
+              "imagine": "/assets/ads/vila-piscina.jpg"
+            },
+            {
+              "text": "🌳 Casă de vacanță - Sinaia",
+              "premium": true,
+              "creditsRequired": 3,
+              "imagine": "/assets/ads/casa-sinaia.jpg"
+            },
+            {
+              "text": "🏡 Casă tradițională - Maramureș",
+              "premium": false,
+              "imagine": "/assets/ads/casa-maramures.jpg"
+            }
+          ],
+          "products": [
+            {
+              "id": 1021,
+              "nume": "Casă 4 camere Ilfov",
+              "pret": 250000,
+              "imagine": "/assets/products/casa-4cam.jpg",
+              "requiresCredits": 7,
+              "contactCredits": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nume": "Auto",
+      "ads": [
+        {
+          "text": "🚗 Audi A4 - 2019 - 40.000 km",
+          "premium": true,
+          "creditsRequired": 2,
+          "imagine": "/assets/ads/audi-a4.jpg"
+        },
+        {
+          "text": "🏍️ Motor Honda CB500X - 2022",
+          "premium": true,
+          "creditsRequired": 1,
+          "imagine": "/assets/ads/motor-honda.jpg"
+        },
+        {
+          "text": "🚚 Dubă utilitară - 2018",
+          "premium": false,
+          "imagine": "/assets/ads/duba-utilitara.jpg"
+        }
+      ],
+      "subcategorii": [
+        {
+          "id": 201,
+          "nume": "Mașini second-hand",
+          "ads": [
+            {
+              "text": "🚙 BMW X5 - Negociabil",
+              "premium": false,
+              "imagine": "/assets/ads/bmw-x5.jpg"
+            },
+            {
+              "text": "🏎️ Porsche 911 - 2017",
+              "premium": true,
+              "creditsRequired": 4,
+              "imagine": "/assets/ads/porsche-911.jpg"
+            }
+          ],
+          "products": [
+            {
+              "id": 2011,
+              "nume": "VW Golf 7 - 2016",
+              "pret": 15000,
+              "imagine": "/assets/products/golf7.jpg",
+              "requiresCredits": 3,
+              "contactCredits": 1
+            }
+          ]
+        },
+        {
+          "id": 202,
+          "nume": "Piese auto",
+          "ads": [
+            {
+              "text": "🔧 Kit distribuție complet",
+              "premium": false,
+              "imagine": "/assets/ads/kit-distributie.jpg"
+            },
+            {
+              "text": "🛞 Jante originale BMW",
+              "premium": true,
+              "creditsRequired": 1,
+              "imagine": "/assets/ads/jante-bmw.jpg"
+            }
+          ],
+          "products": [
+            {
+              "id": 2021,
+              "nume": "Anvelope vara 205/55 R16",
+              "pret": 1200,
+              "imagine": "/assets/products/anvelope.jpg",
+              "requiresCredits": 2,
+              "contactCredits": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
