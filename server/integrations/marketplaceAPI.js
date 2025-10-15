@@ -1,85 +1,31 @@
-// Stub implementation
-class AmazonSPAPI {
-  constructor(config) {
-    // Accept but ignore config
-  }
-  
-  async getProduct(productId) {
-    return {
-      id: productId,
-      price: 99.99,
-      inventory: 100
-    };
-  }
-
-  async getPrice(productId) {
-    return 99.99;
-  }
-}
-
-class AlibabaOpenAPI {
-  constructor(config) {
-    // Accept but ignore config
-  }
-  
-  async productDetails(productId) {
-    return {
-      id: productId,
-      price: 49.99,
-      minOrderQuantity: 10
-    };
-  }
-
-  async getPrice(productId) {
-    return 49.99;
-  }
-
-  async getCost(productId) {
-    return 29.99;
-  }
-}
-
-module.exports = { AmazonSPAPI, AlibabaOpenAPI };
+// Mock implementation of the Unified Marketplace API
 
 class UnifiedAPI {
   constructor() {
-    this.amazon = new AmazonSPAPI({
-      clientId: process.env.AMAZON_CLIENT_ID,
-      clientSecret: process.env.AMAZON_SECRET
-    });
-
-    this.alibaba = new AlibabaOpenAPI({
-      appKey: process.env.ALIBABA_KEY,
-      appSecret: process.env.ALIBABA_SECRET
-    });
+    // In a real implementation, this would connect to various marketplace SDKs
   }
 
   async getProductDetails(platform, productId) {
-    switch(platform) {
-      case 'amazon':
-        return this.amazon.getProduct(productId);
-      case 'alibaba':
-        return this.alibaba.productDetails(productId);
-      default:
-        throw new Error(`Unsupported platform: ${platform}`);
-    }
+    console.log(`Mock UnifiedAPI: Getting product details for ${productId} from ${platform}...`);
+    return Promise.resolve({
+      id: productId,
+      name: `Mock Product ${productId}`,
+      price: 100,
+      description: 'A mock product description.',
+    });
   }
 
   async getCompetitorPrices(productId) {
-    const [amazonPrice, alibabaPrice] = await Promise.all([
-      this.amazon.getPrice(productId),
-      this.alibaba.getPrice(productId)
+    console.log(`Mock UnifiedAPI: Getting competitor prices for ${productId}...`);
+    return Promise.resolve([
+      { competitor: 'Competitor A', price: 98 },
+      { competitor: 'Competitor B', price: 102 },
     ]);
-    
-    return {
-      amazon: amazonPrice,
-      alibaba: alibabaPrice
-    };
   }
 
   async getProductCost(productId) {
-    // Implementation to get product cost from suppliers
-    return this.alibaba.getCost(productId);
+    console.log(`Mock UnifiedAPI: Getting product cost for ${productId}...`);
+    return Promise.resolve(70);
   }
 }
 
