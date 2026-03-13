@@ -13,14 +13,15 @@ interface AdCardProps {
 }
 
 export default function AdCard({
-  id,
+  id: _id,
   text,
   image,
   premium,
   creditsRequired,
   onClick
 }: AdCardProps) {
-  const { canAfford } = useContext(CreditContext);
+  const context = useContext(CreditContext);
+  const canAfford = context?.canAfford ?? (() => true);
 
   return (
     <div 

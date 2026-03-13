@@ -9,6 +9,16 @@ class UnifiedAPI {
     console.log(`Getting product details for ${productName} from ${platform}`);
     return { minOrderQuantity: 10 };
   }
+
+  async getProductCost(productId) {
+    console.log(`Getting product cost for ${productId}`);
+    return 70;
+  }
+
+  async updatePricing(pricingData) {
+    console.log('Updating pricing...', pricingData);
+    return { success: true, ...pricingData };
+  }
 }
 
 export default UnifiedAPI;

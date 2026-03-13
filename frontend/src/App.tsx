@@ -1,8 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { CategorySelector } from './components/CategorySelector.ro'
+import { CategorySelector } from './components/CategorySelector'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import { ProductsPage, ProductDetailPage } from './pages/products'
+import Home from './pages/Home'
+import { ProductsPage } from './pages/products'
+import { ProductDetailPage } from './pages/products/[id]'
 import { CheckoutPage } from './pages/checkout'
 import './App.css'
 
@@ -14,7 +16,8 @@ function App() {
         <CategorySelector />
         <main>
           <Routes>
-            <Route path="/" element={<ProductsPage />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<ProductsPage />} />
             <Route path="/products/:id" element={<ProductDetailPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
           </Routes>

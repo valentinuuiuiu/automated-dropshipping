@@ -27,6 +27,11 @@ class UnifiedAPI {
     console.log(`Mock UnifiedAPI: Getting product cost for ${productId}...`);
     return Promise.resolve(70);
   }
+
+  async updatePricing(pricingData) {
+    console.log(`Mock UnifiedAPI: Updating pricing...`, pricingData);
+    return Promise.resolve({ success: true, ...pricingData });
+  }
 }
 
-module.exports = UnifiedAPI;
+export default UnifiedAPI;
