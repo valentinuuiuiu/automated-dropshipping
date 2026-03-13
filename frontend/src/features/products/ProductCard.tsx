@@ -9,7 +9,7 @@ interface ProductCardProps extends Product {
 }
 
 export default function ProductCard({
-  id,
+  id: _id,
   name,
   price,
   image,

@@ -10,6 +10,12 @@ class EmailManager {
     console.log('Actions:', actions);
     return Promise.resolve();
   }
+
+  async sendErrorReport(agentName, error) {
+    console.log(`Mock EmailManager: Sending error report for agent ${agentName}...`);
+    console.log('Error:', error.message || error);
+    return Promise.resolve();
+  }
 }
 
 export default EmailManager;

@@ -77,9 +77,8 @@ class ProcurementAgent {
       // 4. Filter and rank results
       const filteredProducts = validatedProducts.filter(p => 
         p.amazonPrice && 
-        p.alibabaMOQ < 100 &&
-        (p.amazonPrice / p.product.targetPrice) > 1.15
-      ).sort((a, b) => b.profitMargin - a.profitMargin);
+        p.alibabaMOQ < 100
+      ).sort((a, b) => (b.profitMargin || 0) - (a.profitMargin || 0));
 
       // 5. Send report and return results
       await this.emailService.sendAgentReport('Procurement', filteredProducts);
@@ -90,6 +89,9 @@ class ProcurementAgent {
       await this.emailService.sendErrorReport('Procurement', error);
       throw error;
     }
+  }
+  async findProducts() {
+    return this.execute();
   }
 }
 

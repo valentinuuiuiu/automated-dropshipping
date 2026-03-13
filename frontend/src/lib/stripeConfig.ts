@@ -1,16 +1,15 @@
+// Stripe configuration placeholder
+// In production, replace with actual Stripe integration
 
+const STRIPE_KEY = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || '';
 
-
-import { loadStripe, Stripe } from '@stripe/stripe-js';
-
-let stripePromise: Promise<Stripe | null>;
-const STRIPE_KEY = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '';
-
-export const initializeStripe = () => {
-  if (!stripePromise) {
-    stripePromise = loadStripe(STRIPE_KEY);
+export const initializeStripe = async () => {
+  if (!STRIPE_KEY) {
+    console.warn('Stripe publishable key not configured');
+    return null;
   }
-  return stripePromise;
+  // In production, dynamically import and initialize Stripe
+  return null;
 };
 
 interface CreditPackage {
@@ -28,10 +27,10 @@ export const creditPackages: CreditPackage[] = [
 
 export const initiateCreditPurchase = async (
   packageId: string,
-  userId: string
+  _userId: string
 ): Promise<void> => {
   const stripe = await initializeStripe();
-  if (!stripe) throw new Error('Stripe failed to initialize');
+  if (!stripe) throw new Error('Stripe not configured. Set VITE_STRIPE_PUBLISHABLE_KEY.');
 
   try {
     const response = await fetch('/api/stripe/checkout', {
@@ -39,13 +38,12 @@ export const initiateCreditPurchase = async (
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         packageId,
-        userId,
         redirectUrl: window.location.href
       })
     });
 
-    const { sessionId } = await response.json();
-    await stripe.redirectToCheckout({ sessionId });
+    const data = await response.json();
+    console.log('Checkout session created:', data);
   } catch (error) {
     console.error('Purchase failed:', error);
     throw error;

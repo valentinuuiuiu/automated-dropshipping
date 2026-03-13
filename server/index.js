@@ -1,20 +1,27 @@
 import 'dotenv/config';
 import express from 'express';
 import { WebSocketServer } from 'ws';
-import mongoose from 'mongoose';
 import ProcurementAgent from './agents/procurementAgent.js';
 import PricingAgent from './agents/pricingEngine.js';
-const app = express();
+import path from 'path';
+import { fileURLToPath } from 'url';
+import agentsRouter from './routes/agents.js';
+import productsRouter from './routes/products.js';
+import emailRouter from './routes/email.js';
 
-// Database Connection
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
-  console.log('Connected to MongoDB');
-}).catch(err => {
-  console.error('Failed to connect to MongoDB', err);
-});
+const app = express();
+app.use(express.json());
+
+// Database Connection (optional - only connects if MONGODB_URI is set)
+if (process.env.MONGODB_URI) {
+  import('mongoose').then(mongoose => {
+    mongoose.default.connect(process.env.MONGODB_URI).then(() => {
+      console.log('Connected to MongoDB');
+    }).catch(err => {
+      console.error('Failed to connect to MongoDB', err);
+    });
+  });
+}
 
 // Real-time Agent Updates
 const wss = new WebSocketServer({ port: 8080 });
@@ -33,17 +40,10 @@ setInterval(() => {
     .then(products => broadcast({ type: 'PRODUCTS_UPDATE', data: products }));
 }, 300000);
 
-import agentsRouter from './routes/agents.js';
-import productsRouter from './routes/products.js';
-import emailRouter from './routes/email.js';
-
 // API Endpoints
 app.use('/api/agents', agentsRouter);
 app.use('/api/products', productsRouter);
 app.use('/api/email', emailRouter);
-
-import path from 'path';
-import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
